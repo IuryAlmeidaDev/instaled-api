@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  instaled-api:
+    build:
+      context: . # Usa o Dockerfile no diretório atual
+      dockerfile: Dockerfile
+    container_name: instaled-api-container
+    ports:
+      - "8080:8080" # Mapeia a porta 8080 do host para a 8080 do container
+    restart: unless-stopped # Opcional: reinicia o container a menos que seja parado manualmente
+
+# Adicione outros serviços aqui, como um banco de dados, se necessário.
